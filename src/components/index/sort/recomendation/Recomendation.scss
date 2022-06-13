@@ -1,0 +1,30 @@
+.recomendation {
+  margin-bottom: 20px;
+}
+
+.recomendation__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.recomendation__lists {
+  margin-bottom: 0;
+  margin-right: 7px;
+  font-size: 0.85rem;
+  color: #bcbcbc;
+  background-color: hsla(0, 0%, 100%, 0.17);
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: hsla(0, 0%, 100%, 0.27);
+  }
+}
+
+@media (max-width: 455px) {
+  .recomendation__wrapper {
+    overflow: scroll;
+  }
+}
