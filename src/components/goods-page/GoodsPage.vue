@@ -8,7 +8,7 @@
       <div class="game__item-container-left">
         <div class="game__item-container-left-info">
           <div class="game__item-container-box">
-            <h2>Об игре</h2>
+            <div class="title">Об игре</div>
             <p>
               Warface — динамичный экшен в жанре MMOFPS с миллионами поклонников
               по всему миру. В игре вас ждут отличная графика, увлекательные
@@ -37,8 +37,7 @@
           </div>
         </div>
         <div class="slider__container">
-          <h2>Вам может понравиться</h2>
-          <!-- <SliderInPage /> -->
+          <div class="title">Вам может понравиться</div>
         </div>
       </div>
       <div class="game__item-container-right">
@@ -56,62 +55,70 @@
         </div>
         <div class="game__item-container-right-info">
           <div class="game__item-container-box">
-            <h2>Информация об игре</h2>
+            <div class="title">Информация об игре</div>
             <ul class="game__item-lists-info">
               <li>
-                <p>Жанр</p>
-                <p>Экшен, Шутер</p>
+                <div>Жанр</div>
+                <div>Экшен, Шутер</div>
               </li>
               <li>
-                <p>Издатель</p>
-                <p>Экшен, Шутер</p>
+                <div>Издатель</div>
+                <div>Экшен, Шутер</div>
               </li>
               <li>
-                <p>Техническая поддержка</p>
-                <p>Экшен, Шутер</p>
+                <div>Техническая поддержка</div>
+                <div>Экшен, Шутер</div>
               </li>
               <li>
-                <p>Дата выхода</p>
-                <p>Экшен, Шутер</p>
+                <div>Дата выхода</div>
+                <div>Экшен, Шутер</div>
               </li>
               <li>
-                <p>Размер дистрибутива</p>
-                <p>Экшен, Шутер</p>
+                <div>Размер дистрибутива</div>
+                <div>Экшен, Шутер</div>
               </li>
               <li>
-                <p>Теги</p>
-                <p>Экшен, Шутер</p>
+                <div>Теги</div>
+                <div>
+                  <ul>
+                    <li>
+                      <router-link to="/">Экшен</router-link>
+                    </li>
+                    <li>
+                      <router-link to="/">Шутер</router-link>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="game__item-container-right-info">
+          <div class="game__item-container-box">
+            <div class="title">Атрибуты</div>
+            <ul class="game__item-lists-info">
+              <li>
+                <span>
+                  <div class="icon voz-0"></div> Возрастное ограничение
+                </span>
+              </li>
+              <li>
+                <span>
+                  <div class="icon client"></div> Клиентская-игра
+                </span>
+              </li>
+              <li>
+                <span>
+                  <div class="icon online"></div> Онлайн-игра
+                </span>
               </li>
             </ul>
           </div>
         </div>
         <div class="game__item-container-right-info">
           <div class="game__item-container-box">
-            <h2>Атрибуты</h2>
-            <ul class="game__item-lists-info">
-              <li>
-                <p>Жанр</p>
-                <p>Возрастное ограничение</p>
-              </li>
-              <li>
-                <p>Издатель</p>
-                <p>Клиентская</p>
-              </li>
-              <li>
-                <p>Техническая</p>
-                <p>Поддерживает запись видео</p>
-              </li>
-              <li>
-                <p>Дата</p>
-                <p>Поддерживает снятие скриншотов</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="game__item-container-right-info">
-          <div class="game__item-container-box">
-            <h2>Системные требования</h2>
-            <h4>Минимальные</h4>
+            <div class="title">Системные требования</div>
             <ul class="game__item-list-system">
               <li>ОС: Windows XP</li>
               <li>Процессор: Intel Core 2 Duo</li>
@@ -127,12 +134,12 @@
 </template>
 
 <script>
-import SliderInPage from "@/components/slider/SliderInPage";
+// import SliderInPage from "@/components/slider/SliderInPage";
 
 export default {
-  components: {
-    SliderInPage,
-  },
+  // components: {
+  //   SliderInPage,
+  // },
   data() {
     return {
       ImgItem: require("@/assets/imgs/game-page/Battlegrounds.jpg"),
@@ -141,6 +148,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "./GoodsPage.scss";
 </style>

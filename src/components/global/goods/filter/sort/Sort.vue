@@ -1,8 +1,14 @@
 <template>
   <div class="filter__sort">
-    <div @click="show = !show">Сначала: {{ selectOption?.name }}</div>
-    <div v-if="show" class="filter__sort-value">
-      <span v-for="option in options" :key="option.value" @click="selectOptions(option)">{{ option.name }}</span>
+    <span>Сначала:</span>
+
+    <div :class="[{ visible: visibleMenu }]" class="select" @click.stop="switchMenu">
+      {{ selectedOption.name }}
+    </div>
+
+    <div v-if="visibleMenu" ref="menu" class="filter__sort-value">
+      <span class="selectOption active" @click.stop="switchMenu"> {{ selectedOption.name }} </span>
+      <span v-for="option in sortedOptions" :key="option.value" @click="selectOption(option)">{{ option.name }}</span>
     </div>
   </div>
 </template>
@@ -11,8 +17,8 @@
 export default {
   data() {
     return {
-      selectOption: null,
-      show: false,
+      selectedOption: { name: "рекомендуемые", value: 1 },
+      visibleMenu: false,
       options: [
         { name: "рекомендуемые", value: 1 },
         { name: "по дате выхода", value: 2 },
@@ -21,20 +27,39 @@ export default {
       ],
     };
   },
+
+  computed: {
+    sortedOptions() {
+      return this.options.filter((option) => option.value !== this.selectedOption.value);
+    }
+  },
+  watch: {
+    visibleMenu() {
+      if (this.visibleMenu) {
+        document.removeEventListener('click', this.clickPastMenu);
+        document.addEventListener('click', this.clickPastMenu);
+      } else {
+        document.removeEventListener('click', this.clickPastMenu);
+      }
+    }
+  },
   methods: {
-    selectOptions(option) {
-      this.selectOption = option;
-      this.show = false;
+    selectOption(option) {
+      this.selectedOption = option;
     },
-    hideSelect() {
-      this.show = false;
+
+    // Если клик мимо меню - удалить слушатель и 
+    clickPastMenu(e) {
+      if (this.$refs.menu !== e.target) {
+        document.removeEventListener('click', this.clickPastMenu);
+        this.visibleMenu = false;
+      }
     },
-  },
-  mounted() {
-    document.addEventListener("click", this.hideSelect.bind(this), true);
-  },
-  beforeDestroy() {
-    document.removeEventListener("click", this.hideSelect);
+
+    switchMenu() {
+      // Переключить видимость меню
+      this.visibleMenu = !this.visibleMenu;
+    }
   },
 };
 </script>

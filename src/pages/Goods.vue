@@ -1,5 +1,5 @@
 <template>
-  <selection class="games">
+  <div class="games">
     <div class="games__breadcrumbs">
       <Breadcrumbs />
     </div>
@@ -15,7 +15,7 @@
         <Pagination />
       </div>
     </div>
-  </selection>
+  </div>
 </template>
 
 <script>
@@ -62,13 +62,14 @@ export default {
   color: #fff;
   padding: 0 0 12px 0;
 
-  & h1 {
-    font-size: 22px;
+  h1 {
     color: #f5f5f7;
-    margin: 0 12px 0 0;
+    margin: 0 12px 12px 0;
+    font-weight: 500;
+    font-size: 1.37rem;
   }
 
-  & p {
+  p {
     margin: 0;
     margin-left: 10px;
     color: #979797;

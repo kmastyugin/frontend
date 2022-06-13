@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import Slider from "@/components/slider/Slider";
+// import Slider from "@/components/slider/Slider";
 import Selection from "@/components/index/sort/selection/Selection";
 import List from "@/components/global/goods/list/List";
 import Recomendation from "@/components/index/sort/recomendation/Recomendation";
@@ -36,7 +36,7 @@ import Popular from "@/components/index/sort/popular/Popular";
 
 export default {
   components: {
-    Slider,
+    // Slider,
     Selection,
     List,
     Recomendation,

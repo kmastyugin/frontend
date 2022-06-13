@@ -18,6 +18,7 @@
   outline: none;
   color: rgba(245, 245, 247, 0.7);
   background-color: #272728;
+  box-sizing: border-box;
 
   &:hover {
     color: #f5f5f7;
